@@ -1,14 +1,16 @@
 {
-  "name": "backend",
+  "name": "trippilot-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "TripPilot AI Backend",
+  "main": "src/server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Harshita Pulavarti",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "bcryptjs": "^3.0.3",
