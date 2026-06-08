@@ -1,5 +1,4 @@
 # TripPilot AI
-# TripPilot AI
 
 TripPilot AI is a MERN-based travel assistant that allows users to upload travel booking information, generate itineraries, store trip history, and share itineraries through unique links.
 
