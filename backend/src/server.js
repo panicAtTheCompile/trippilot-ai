@@ -24,46 +24,7 @@ app.get("/", (req, res) => {
 });
 
 const PORT = process.env.PORT || 8000;
-import { GoogleGenerativeAI }
-from "@google/generative-ai";
 
-app.get(
-  "/test-gemini",
-  async (req, res) => {
-
-    try {
-
-      const genAI =
-        new GoogleGenerativeAI(
-          process.env.GEMINI_API_KEY
-        );
-
-      const model =
-        genAI.getGenerativeModel({
-          model: "gemini-2.0-flash"
-        });
-
-      const result =
-        await model.generateContent(
-          "Say hello in one sentence."
-        );
-
-      res.send(
-        result.response.text()
-      );
-
-    } catch (error) {
-
-      console.log(error);
-
-      res.status(500).json({
-        message: error.message
-      });
-
-    }
-
-  }
-);
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
 });
