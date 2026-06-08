@@ -6,22 +6,32 @@ from "../middleware/auth.middleware.js";
 import { upload }
 from "../middleware/upload.middleware.js";
 
-const router = express.Router();
+import {
+  uploadTrip,
+  getMyTrips,
+  getSharedTrip,
+}
+from "../controllers/trip.controller.js";
+
+const router =
+  express.Router();
 
 router.post(
   "/upload",
   protect,
   upload.single("file"),
-  async (req, res) => {
+  uploadTrip
+);
 
-    res.json({
-      message:
-        "File uploaded successfully",
+router.get(
+  "/",
+  protect,
+  getMyTrips
+);
 
-      file: req.file
-    });
-
-  }
+router.get(
+  "/share/:shareId",
+  getSharedTrip
 );
 
 export default router;

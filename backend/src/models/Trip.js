@@ -5,8 +5,10 @@ const tripSchema = new mongoose.Schema(
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true
+      required: true,
     },
+
+    title: String,
 
     originalFile: String,
 
@@ -14,19 +16,11 @@ const tripSchema = new mongoose.Schema(
 
     itinerary: String,
 
-    warnings: [String],
-
-    shareId: {
-      type: String,
-      unique: true
-    }
+    shareId: String,
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 
-export default mongoose.model(
-  "Trip",
-  tripSchema
-);
+export default mongoose.model("Trip", tripSchema);
